@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://Gibran_01:Juegos1603@usersgibran.cl9oopp.mongodb.net/reservationsDB?retryWrites=true&w\=majority&appName\=UsersGibran
+      connection-pool:
+        initial-size: 2
+        max-size: 4
+        max-wait-time: 100000
+
+server:
+  port: 8088
