@@ -32,15 +32,15 @@ public class ClientController {
         return clientService.saveClient(client);
     }
 
-    @PutMapping("/{id}")
+    @PatchMapping("/{id}")
     public Client updateClient(@PathVariable("id") String id, @RequestBody Client clientDetails){
         Client client = clientService.getClientById(id)
-                .orElseThrow(() -> new RuntimeException("Client don=t found"));
+                .orElseThrow(() -> new RuntimeException("Client don't found"));
         return clientService.saveClient(client);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<Client> login(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         Optional<Client> clientOptional = clientService.getClientByEmail(loginRequest.getEmail());
 
         if (clientOptional.isPresent()) {
@@ -48,10 +48,12 @@ public class ClientController {
 
             if (client.getPassword().equals(loginRequest.getPassword())) {
                 return ResponseEntity.ok(client);
+            } else {
+                return ResponseEntity.badRequest().body("Incorrect Password");
             }
+        } else {
+            return ResponseEntity.notFound().build();
         }
-
-        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
     }
 
     @DeleteMapping("/{id}")
