@@ -26,3 +26,19 @@ Crud para Clientes, Habitaciones y Reservas
 2. Navega al directorio del proyecto:
 
 3. Ejecuta el proyecto:
+
+## Estructura del Proyecto
+
+├── src/
+│ ├── main/
+│ │ ├── java/
+│ │ │ ├── com/
+│ │ │ │ ├── hotel/
+│ │ │ │ │ ├── clientes/
+│ │ │ │ │ ├── reservaciones/
+│ │ │ │ │ ├── dto/
+│ │ │ │ │ ├── rooms/
+│ ├── resources/
+│ │ ├── application.properties
+├── pom.xml
+└── README.md
