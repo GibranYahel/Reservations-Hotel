@@ -37,7 +37,7 @@ Crud para Clientes, Habitaciones y Reservas
 │ │ │ │ │ ├── clientes/
 │ │ │ │ │ ├── reservaciones/
 │ │ │ │ │ ├── dto/
-│ │ │ │ │ ├── rooms/
+│ │ │ │ │ ├── habitaciones/
 │ ├── resources/
 │ │ ├── application.properties
 ├── pom.xml
